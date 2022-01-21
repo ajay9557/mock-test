@@ -33,7 +33,7 @@ func (u *user) Find(id int) (*models.User, error) {
 
 func (u *user) Create(id int, name string) (int, error) {
 	query := "insert into users(id, name) values (?, ?)"
-	resp, err := u.db.ExecContext(context.TODO(), query, id)
+	resp, err := u.db.ExecContext(context.TODO(), query, id, name)
 	if err != nil {
 		return 0, err
 	}

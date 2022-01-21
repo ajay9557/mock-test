@@ -68,7 +68,7 @@ func Test_Create(t *testing.T) {
 			resp:     1,
 			err:      nil,
 			mock: []interface{}{
-				mock.ExpectExec(query).WillReturnResult(sqlmock.NewResult(1, 1)),
+				mock.ExpectExec(query).WithArgs(1, "test").WillReturnResult(sqlmock.NewResult(1, 1)),
 			},
 		},
 	}
